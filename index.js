@@ -1,4 +1,10 @@
-exports.helloWorld = (req, res) => {
-  let message = req.query.message || req.body.message || "Hello World!";
-  res.status(200).send(message);
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.sendFile("index.html");
+});
+
+module.exports = {
+  app
 };
