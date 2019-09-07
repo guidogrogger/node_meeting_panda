@@ -7,7 +7,9 @@ const serveStatic = (localFilename) => {
 };
 
 app.get("/", serveStatic("index.html") );
-app.get("/face.js", serveStatic("face.js") );
+// TODO better way of handling static files
+app.get("/static/face.js", serveStatic("face.js") );
+//app.get("/app/face.js", serveStatic("face.js") );
 
 module.exports = {
     app
